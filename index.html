@@ -1,30 +1,459 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>公司信息 | 深圳市数智锚点科技有限公司</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body { font-family: 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f9f9f9; margin: 0; padding: 0; }
-        .container { max-width: 600px; background: #fff; margin: 40px auto; padding: 32px 24px 32px 24px; border-radius: 12px; box-shadow: 0 3px 18px #ddd;}
-        .title { font-size: 2em; font-weight: bold; color: #1750a6; margin-bottom: 16px; }
-        .item { margin: 20px 0; font-size: 1.11em; color: #444; }
-        .label { color: #888; font-weight: bold; margin-right: 8px;}
-        .main-business { margin-top: 18px; }
-        @media (max-width: 680px) {
-            .container { margin: 0; border-radius: 0; box-shadow: none; padding: 18px; }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shenzhen Shuzhi Maodian Technology Co., Ltd</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* 全局样式 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0a0a0a;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* 导航栏 */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    .logo img {
+      width: 36px;
+      height: 36px;
+    }
+
+    .nav-links a {
+      color: #ccc;
+      text-decoration: none;
+      margin-left: 30px;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .nav-links .active {
+      color: white;
+      text-decoration: underline;
+    }
+
+    /* Hero 区 */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 80px 0;
+      gap: 60px;
+    }
+
+    .hero-text h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .hero-text h1 span {
+      color: #4f46e5;
+    }
+
+    .hero-text p {
+      color: #b3b3b3;
+      margin-bottom: 40px;
+      font-size: 1rem;
+    }
+
+    .focus-badge {
+      background: linear-gradient(135deg, #1e1b4b, #1a1a2e);
+      border-radius: 30px;
+      padding: 10px 20px;
+      color: #a8a8ff;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 30px;
+      border: 1px solid #4f46e5;
+    }
+
+    .focus-badge svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .hero-image img {
+      width: 380px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      background: radial-gradient(circle, transparent 50%, rgba(0,0,0,0.2) 100%);
+      padding: 20px;
+    }
+
+    /* 技术能力区 */
+    .tech-strength {
+      text-align: center;
+      padding: 80px 0;
+      margin: 0 auto;
+    }
+
+    .tech-strength h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .tech-strength h2 span {
+      color: #4f46e5;
+    }
+
+    .tech-strength p {
+      color: #b3b3b3;
+      margin-bottom: 60px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: rgba(20, 20, 20, 0.7);
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid rgba(79, 70, 229, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-icon {
+      width: 32px;
+      height: 32px;
+      background: #1e1b4b;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;
+      color: #a8a8ff;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: white;
+    }
+
+    .card-desc {
+      color: #b3b3b3;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+
+    .progress-container {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: #a8a8ff;
+      margin-bottom: 8px;
+    }
+
+    .progress-bar {
+      height: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 3px;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #4f46e5, #7c3aed);
+      border-radius: 3px;
+    }
+
+    /* 底部信息区 */
+    footer {
+      padding: 60px 0;
+      background: rgba(10, 10, 10, 0.9);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+    }
+
+    .footer-left .logo {
+      margin-bottom: 20px;
+    }
+
+    .footer-left p {
+      color: #b3b3b3;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+
+    .contact-info {
+      margin-top: 20px;
+      font-size: 0.95rem;
+      color: #b3b3b3;
+    }
+
+    .contact-info li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .contact-info svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .footer-right {
+      font-size: 0.95rem;
+      color: #b3b3b3;
+    }
+
+    .footer-right h3 {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    .footer-right a {
+      color: #b3b3b3;
+      text-decoration: none;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .footer-right a:hover {
+      color: #fff;
+    }
+
+    /* 响应式调整 */
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        gap: 40px;
+      }
+      .hero-image {
+        order: -1;
+      }
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+      .footer-content {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+      .tech-strength h2 {
+        font-size: 2rem;
+      }
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="title">公司信息</div>
-        <div class="item"><span class="label">公司名称:</span>深圳市数智锚点科技有限公司</div>
-        <div class="item"><span class="label">公司地址:</span>深圳市福田区梅华路159号振兴大厦305室</div>
-        <div class="item"><span class="label">邮箱:</span><a href="mailto:service@szmaodian.cn">service@szmaodian.cn</a></div>
-        <div class="item main-business"><span class="label">主营业务:</span>
-            APP开发、数据发掘、产品运营
-        </div>
+  <!-- 导航栏 -->
+  <header>
+    <div class="logo">
+      <img src="https://via.placeholder.com/36x36?text=⚓" alt="Logo" />
+      <span>Shenzhen Shuzhi Maodian Technology Co., Ltd</span>
     </div>
+    <nav class="nav-links">
+      <a href="#" class="active">Home</a>
+      <a href="#">Contact US</a>
+    </nav>
+  </header>
+
+  <!-- Hero 区 -->
+  <section class="hero container">
+    <div class="hero-text">
+      <div class="focus-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5V13H2v4zm10 2l-6-3v-4h12v4l-6 3z"/></svg>
+        Focus on iOS App Development
+      </div>
+      <h1>The Ultimate <span>iOS Experience</span></h1>
+      <p>We are an elite team specializing in the development of iOS utility applications. With a deep understanding of the Apple ecosystem and outstanding technical capabilities, we create efficient, secure, and beautiful mobile applications for users worldwide.</p>
+    </div>
+    <div class="hero-image">
+      <img src="https://via.placeholder.com/380x600?text=iPhone+Mockup" alt="iPhone Mockup" />
+    </div>
+  </section>
+
+  <!-- 技术能力区 -->
+  <section class="tech-strength container">
+    <h2>Technology <span>Strength</span></h2>
+    <p>Deeply rooted in the Apple technology ecosystem, mastering the full stack of capabilities from underlying frameworks to cutting-edge AI.</p>
+    <div class="cards">
+      <!-- 卡片 1 -->
+      <div class="card">
+        <div class="card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        </div>
+        <div class="card-title">Swift & SwiftUI</div>
+        <div class="card-desc">Utilize Apple's latest programming languages and UI frameworks to create native, high-performance applications.</div>
+        <div class="progress-container">
+          <span>Proficiency</span>
+          <span>98%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 98%;"></div>
+        </div>
+      </div>
+
+      <!-- 卡片 2 -->
+      <div class="card">
+        <div class="card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14h2v-2h10v2h2V5c0-1.1-.9-2-2-2zm-7 14H7V7h5v10zm8-2h-2V7h2v8z"/></svg>
+        </div>
+        <div class="card-title">UIKit & Combine</div>
+        <div class="card-desc">In-depth understanding of UIKit component system and reactive programming framework.</div>
+        <div class="progress-container">
+          <span>Proficiency</span>
+          <span>95%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 95%;"></div>
+        </div>
+      </div>
+
+      <!-- 卡片 3 -->
+      <div class="card">
+        <div class="card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        </div>
+        <div class="card-title">Core ML & Vision</div>
+        <div class="card-desc">Integrating machine learning and computer vision to give apps intelligent capabilities.</div>
+        <div class="progress-container">
+          <span>Proficiency</span>
+          <span>90%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 90%;"></div>
+        </div>
+      </div>
+
+      <!-- 卡片 4 -->
+      <div class="card">
+        <div class="card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        </div>
+        <div class="card-title">Security & Privacy</div>
+        <div class="card-desc">Strictly adhere to Apple's privacy guidelines to ensure user data security.</div>
+        <div class="progress-container">
+          <span>Proficiency</span>
+          <span>98%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 98%;"></div>
+        </div>
+      </div>
+
+      <!-- 卡片 5 -->
+      <div class="card">
+        <div class="card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14h2v-2h10v2h2V5c0-1.1-.9-2-2-2zm-7 14H7V7h5v10zm8-2h-2V7h2v8z"/></svg>
+        </div>
+        <div class="card-title">Performance</div>
+        <div class="card-desc">Extreme performance optimization ensures a smooth 60fps user experience.</div>
+        <div class="progress-container">
+          <span>Proficiency</span>
+          <span>94%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 94%;"></div>
+        </div>
+      </div>
+
+      <!-- 卡片 6 -->
+      <div class="card">
+        <div class="card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        </div>
+        <div class="card-title">Design System</div>
+        <div class="card-desc">Follow the HIG design guidelines to create a consistent and elegant user interface.</div>
+        <div class="progress-container">
+          <span>Proficiency</span>
+          <span>92%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 92%;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 底部信息区 -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-left">
+        <div class="logo">
+          <img src="https://via.placeholder.com/36x36?text=⚓" alt="Logo" />
+          <span>Shenzhen Shuzhi Maodian Technology Co., Ltd</span>
+        </div>
+        <p>We specialize in developing iOS utility apps, dedicated to creating efficient, secure, and beautiful mobile application experiences for users worldwide. We believe that excellent tools can make life better.</p>
+        <ul class="contact-info">
+          <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12h2V6h12V4zm-1 18H5v-2h14v2zm0-4H5V8h14v10z"/></svg> service@szmaodian.cn</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.9-.9.9-2.38 0-3.28L15.2 12.4l-1.27-1.27c-.9-.9-2.38-.9-3.28 0l-1.83 1.83-2.2-2.2c-1.45-1.45-3.77-1.45-5.22 0-1.45 1.45-1.45 3.77 0 5.22l1.83 1.83-1.27 1.27c-.9.9-.9 2.38 0 3.28l2.2 2.2c2.83-1.45 5.14-3.76 6.59-6.59l-1.83-1.83-1.27 1.27c-.9.9-2.38.9-3.28 0L10.8 15.2l-1.27-1.27c-.9-.9-2.38-.9-3.28 0l-1.83 1.83-2.2-2.2c-1.45-1.45-1.45-3.77 0-5.22s3.77-1.45 5.22 0l1.83 1.83 1.27-1.27c.9-.9 2.38-.9 3.28 0l1.83 1.83z"/></svg> +86 131-8654-6849</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Rm 3K, Co-working Space, 3rd Floor, No.159 Meihua Rd, Meifeng Community, Meilin Street, Futian District</li>
+        </ul>
+      </div>
+      <div class="footer-right">
+        <h3>Support</h3>
+        <a href="#">Privacy Policy</a>
+        <a href="#">User Agreement</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
