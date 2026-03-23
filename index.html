@@ -6,7 +6,6 @@
   <title>Shenzhen Shuzhi Maodian Technology Co., Ltd</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    /* 全局样式 */
     * {
       margin: 0;
       padding: 0;
@@ -27,7 +26,6 @@
       padding: 0 20px;
     }
 
-    /* 导航栏 */
     header {
       display: flex;
       justify-content: space-between;
@@ -68,7 +66,67 @@
       text-decoration: underline;
     }
 
-    /* Hero 区 */
+    .route-section {
+      display: none;
+    }
+
+    .route-section.active {
+      display: block;
+    }
+
+    .document-page {
+      padding: 80px 0;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .document-page h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .document-page h2 {
+      font-size: 1.8rem;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    .document-page h3 {
+      font-size: 1.4rem;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .document-page p {
+      color: #b3b3b3;
+      margin-bottom: 15px;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .document-page ul {
+      margin-left: 30px;
+      margin-bottom: 20px;
+    }
+
+    .document-page li {
+      color: #b3b3b3;
+      margin-bottom: 10px;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .document-page .last-updated {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #888;
+      font-size: 0.9rem;
+    }
+
     .hero {
       display: flex;
       justify-content: space-between;
@@ -125,15 +183,10 @@
     }
 
     .hero-image .hero-image-phone { 
-      /* position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%); */
       width: 384px;
       height: 353px;
     }
 
-    /* 技术能力区 */
     .tech-strength {
       text-align: center;
       padding: 80px 0;
@@ -224,7 +277,6 @@
       border-radius: 3px;
     }
 
-    /* 底部信息区 */
     footer {
       padding: 60px 0;
       background: rgba(10, 10, 10, 0.9);
@@ -236,6 +288,7 @@
       justify-content: space-between;
       align-items: flex-start;
       gap: 40px;
+      padding: 0;
     }
 
     .footer-left .logo {
@@ -269,6 +322,7 @@
     .footer-right {
       font-size: 0.95rem;
       color: #b3b3b3;
+      width: 300px;
     }
 
     .footer-right h3 {
@@ -288,7 +342,6 @@
       color: #fff;
     }
 
-    /* 响应式调整 */
     @media (max-width: 900px) {
       .hero {
         flex-direction: column;
@@ -319,19 +372,18 @@
   </style>
 </head>
 <body>
-  <!-- 导航栏 -->
   <header>
     <div class="logo">
       <img src="./logo.svg" alt="Logo" height="60" width="60" />
       <span>Shenzhen Shuzhi Maodian Technology Co., Ltd</span>
     </div>
     <nav class="nav-links">
-      <a href="#" class="active">Home</a>
-      <a href="#">Contact US</a>
+      <a href="/" class="active" data-route="/">Home</a>
+      <a href="#" class="">Contact US</a>
     </nav>
   </header>
-
-  <!-- Hero 区 -->
+  
+  <div id="home" class="route-section active">
   <section class="hero container">
     <div class="hero-text">
       <div class="focus-badge">
@@ -347,12 +399,10 @@
     </div>
   </section>
 
-  <!-- 技术能力区 -->
   <section class="tech-strength container">
     <h2>Technology <span>Strength</span></h2>
     <p>Deeply rooted in the Apple technology ecosystem, mastering the full stack of capabilities from underlying frameworks to cutting-edge AI.</p>
     <div class="cards">
-      <!-- 卡片 1 -->
       <div class="card">
         <div class="card-icon">
           <img src="./icon-code.svg" alt="Focus Icon" height="24" width="24"/>
@@ -368,7 +418,6 @@
         </div>
       </div>
 
-      <!-- 卡片 2 -->
       <div class="card">
         <div class="card-icon">
           <img src="./icon-layers.svg" alt="Focus Icon" height="24" width="24"/>
@@ -384,7 +433,6 @@
         </div>
       </div>
 
-      <!-- 卡片 3 -->
       <div class="card">
         <div class="card-icon">
           <img src="./icon-cpu.svg" alt="Focus Icon" height="24" width="24"/>
@@ -400,7 +448,6 @@
         </div>
       </div>
 
-      <!-- 卡片 4 -->
       <div class="card">
         <div class="card-icon">
           <img src="./icon-shield.svg" alt="Focus Icon" height="24" width="24"/>
@@ -416,7 +463,6 @@
         </div>
       </div>
 
-      <!-- 卡片 5 -->
       <div class="card">
         <div class="card-icon">
           <img src="./icon-lightning.svg" alt="Focus Icon" height="24" width="24"/>
@@ -432,7 +478,6 @@
         </div>
       </div>
 
-      <!-- 卡片 6 -->
       <div class="card">
         <div class="card-icon">
           <img src="./icon-platte.svg" alt="Focus Icon" height="24" width="24"/>
@@ -449,8 +494,228 @@
       </div>
     </div>
   </section>
+  </div>
 
-  <!-- 底部信息区 -->
+  <div id="privacy-policy" class="route-section">
+    <div class="document-page">
+      <h1>Privacy Policy</h1>
+      
+      <h2>January 1, 2026</h2>
+      
+      <p>This Privacy Policy describes our policies and procedures for collecting, using and disclosing your information when you use the Services, and tells you about your privacy rights and how the law protects you.</p>
+      
+      <p>We use your personal data to provide and improve services. By using the Services, you agree to the collection and use of information in accordance with this Privacy Policy.</p>
+      
+      <h2>1. Explanation and Definition</h2>
+      
+      <h3>1.1 Explanation</h3>
+      <p>Capitalized words have the meanings defined by the following conditions. The following definitions shall have the same meaning whether appearing in the singular or the plural.</p>
+      
+      <h3>1.2 Definitions</h3>
+      <p>For the purposes of this Privacy Policy:</p>
+      <ul>
+        <li><strong>Affiliate Operator</strong> means an entity that controls, is controlled by, or is under common control with a party, where "control" means an entity that owns 50% or more of the shares, equity or other rights to vote for directors or other governing bodies ownership of securities.</li>
+        <li><strong>Application</strong> means an operator-provided software program that you download on any electronic device named Web Scanner - Dual Accounts.</li>
+        <li><strong>Operator</strong> (referred to in this Agreement as "Operator," "us," "us," or "our") means This application owner.</li>
+        <li><strong>Device</strong> means any device that can access the Services, such as a computer, cell phone or digital tablet.</li>
+        <li><strong>Personal data</strong> is any information relating to an identified or identifiable individual.</li>
+        <li><strong>Service</strong> means an Application.</li>
+        <li><strong>Service Provider</strong> means any natural or legal person who processes data on behalf of the Operator. Refers to third-party operators or individuals employed by the Operator to facilitate the Service, provide the Service on behalf of the Operator, perform services related to the Service, or assist the Operator in analyzing the use of the Service.</li>
+        <li><strong>Usage Data</strong> means data that is collected automatically, whether generated through use of the Service or from the Service infrastructure itself (for example, the duration of page visits).</li>
+        <li><strong>You</strong> mean the individual accessing or using the Services, or the operator or other legal entity (as applicable) accessing or using the Services on behalf of that individual.</li>
+      </ul>
+      
+      <h2>2. COLLECTION AND USE OF YOUR PERSONAL DATA</h2>
+      
+      <h3>2.1 Types of data collected</h3>
+      
+      <h4>2.1.1 Personal data</h4>
+      <p>When using our Services, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information may include, but is not limited to:</p>
+      <ul>
+        <li>Email address</li>
+        <li>Location</li>
+        <li>Usage data</li>
+      </ul>
+      
+      <h4>2.1.2 Usage data</h4>
+      <p>Usage data is automatically collected when using the Services.</p>
+      <p>Usage Data may include your device's internet protocol address (e.g. IP address), browser type, browser version, pages of our Services you visit, time and date of your visit, time spent on those pages, unique device, etc. Information identifiers and other diagnostic data.</p>
+      <p>When you access the Services through or through your mobile device, we may automatically collect certain information, including but not limited to the type of mobile device you use, your mobile device unique ID, your mobile device's IP address, your mobile phone operation system, the type of mobile internet browser you use, unique device identifiers and other diagnostic data.</p>
+      
+      <h3>2.2 Use of your personal data</h3>
+      <p>The operator may use personal data for the following purposes:</p>
+      <ul>
+        <li>To provide and maintain our Services, including monitoring the use of our Services.</li>
+        <li>Manage your account: Manage your registration as a user of the service. The personal data you provide may allow you to access different features of the service available as a registered user.</li>
+        <li>For the performance of a contract: the formulation, compliance and commitment of a purchase contract for products, items or services you have purchased or any other contract you have with us through services.</li>
+        <li>Contacting you: contacting you by email, phone call, text message or other equivalent form of electronic communication, such as push notifications from mobile applications regarding updates to features, products or contractual services (including security updates) or informational communications, Perform as necessary or reasonable.</li>
+        <li>To provide you with news, special offers and general information about other goods, services and events from us that are similar to those you have purchased or inquired about, unless you have opted out of receiving such information.</li>
+        <li>Manage your requests: participate in and manage your requests to us.</li>
+        <li>For business transfers: We may use your information to evaluate or conduct a merger, divestiture, reorganization, reorganization, dissolution or otherwise sell or transfer some or all of our assets, whether as a going concern or as a bankruptcy, liquidation A portion, or similar program, in which the personal data we hold about users of our services is a transferred asset.</li>
+        <li>For other purposes: We may use your information for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotions and evaluating and improving our services, products, services, marketing and your experience.</li>
+      </ul>
+      
+      <p>We may share your personal information in the following situations:</p>
+      <ul>
+        <li>With service providers: We may share your personal information with service providers to monitor and analyze the use of our services in order to contact you.</li>
+        <li>For business transfers: We may share or transfer your personal information in connection with any merger, sale of operator assets, financing or acquisition of all or part of our business to another operator or during negotiations.</li>
+        <li>With affiliated operators: We may share your information with our affiliated operators, in which case we will require those affiliated operators to comply with this Privacy Policy. Affiliated operators include our parent operator and any other sub-operators, joint venture partners or other operators that we control or jointly control with us.</li>
+        <li>With business partners: We may share your information with our business partners in order to offer you certain products, services or promotions.</li>
+        <li>With other users: When you share personal information or otherwise interact with other users in public areas, such information may be viewed by all users and may be publicly posted externally.</li>
+        <li>With your consent: We may disclose your personal information for any other purpose with your consent.</li>
+      </ul>
+      
+      <h3>2.3 Retention of your personal data</h3>
+      <p>The operator will only retain your personal data for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your personal data to the extent necessary to comply with our legal obligations (for example, if we need to retain your data to comply with applicable law), resolve disputes and enforce our legal agreements and policies.</p>
+      <p>The operator will also retain usage data for internal analysis. Usage data is generally retained for a shorter period of time unless the data is used to enhance security or improve the functionality of our services, or we are legally obligated to retain the data for a longer period of time.</p>
+      
+      <h3>2.4 Transferring your personal data</h3>
+      <p>Your information, including personal data, will be processed at the operator's operating offices and wherever other parties involved in the processing are located. This means that this information may be transferred to and stored on computers located outside your state, province, country or other governmental jurisdiction which may have different data protection laws than your jurisdiction.</p>
+      <p>Your agreement to this Privacy Policy and subsequent submission of such information constitutes your consent to this transfer.</p>
+      <p>The operator will take all steps reasonably necessary to ensure that your data is processed securely and in accordance with this Privacy Policy and will not transfer your personal data to organisations or countries unless adequate controls are in place, including security of your data and other personal information.</p>
+      
+      <h3>2.5 Disclosure of your personal data</h3>
+      
+      <h4>2.5.1 Commercial Transactions</h4>
+      <p>Your personal data may be transferred if the operator is involved in a merger, acquisition or asset sale. We will give notice before your personal data is transferred and subject to different privacy policies.</p>
+      
+      <h4>2.5.2 Enforcement</h4>
+      <p>In certain circumstances, the operator may be required to disclose your personal data if required by law or in response to a valid request from a public authority (such as a court or government agency).</p>
+      
+      <h4>2.5.3 Other legal requirements</h4>
+      <p>The operator may disclose your personal data in good faith, believing that such action is necessary to:</p>
+      <ul>
+        <li>Compliance with legal obligations</li>
+        <li>Protect and defend the rights or property of the operator</li>
+        <li>Prevent or investigate possible misconduct in connection with the Services</li>
+        <li>To protect the personal safety of service users or the public</li>
+        <li>Prevent legal liability</li>
+      </ul>
+      
+      <h3>2.6 Security of your personal data</h3>
+      <p>Your conversation data is saved on your phone and it can only access this data. If you delete app then your all saved conversations will be deleted.</p>
+      <p>The security of your personal data is important to us, but remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While we endeavour to use commercially acceptable means to protect your personal data, we cannot guarantee its absolute security.</p>
+      
+      <h2>3. Children's Privacy</h2>
+      <p>Our services are not directed to anyone under the age of 14. We do not knowingly collect personally identifiable information from anyone under the age of 14. If you are a parent or guardian and you know that your child has provided us with personal data, please contact us. If we become aware that we have collected personal data from anyone under the age of 14 without parental consent, we will take steps to delete that information from our servers.</p>
+      <p>If we require consent as a legal basis for processing your information and your country requires parental consent, we may ask for your parental consent before collecting and using that information.</p>
+      
+      <h2>4. Links to other websites</h2>
+      <p>Our Services may contain links to other websites not operated by us. If you click on a third party link, you will be directed to that third party's website. We strongly recommend that you review the privacy policy of each website you visit.</p>
+      <p>We have no control over, and are not responsible for, the content, privacy policies or practices of any third-party website or service.</p>
+      
+      <h2>5. Changes to this Privacy Policy</h2>
+      <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+      <p>We will notify you by email and/or a prominent notice on our Services and update the "Last Updated" date at the top of this Privacy Policy prior to the change becoming effective.</p>
+      <p>You are advised to periodically review this Privacy Policy for any changes. Changes to this Privacy Policy will be effective as soon as they are posted on this page.</p>
+      
+      <h2>User Consent for Data Processing Related to Refund Requests</h2>
+      <p>In accordance with the App Store's refund policy, when a user initiates a refund request, our server will receive a notification (CONSUMPTION_REQUEST) from Apple. In such cases, we will provide Apple with data related to the user's subscription to assist Apple in making a decision regarding the refund request.</p>
+      <p>Please note that the data provided is strictly limited to subscription-related consumption information and does not include any personal or sensitive data. We are committed to complying with Apple's requirements and ensuring that all data processing activities fully adhere to privacy protection laws and regulations.</p>
+      <p>By using this app, you consent to the transmission of your subscription consumption data to Apple, as required for processing refund requests, in compliance with the App Store's refund policies.</p>
+      
+      <h2>6. Contact us</h2>
+      <p>If you have any questions about this Privacy Policy, you may contact us: service@szmaodian.cn</p>
+      
+      <h2>Attachment 1: Web Scanner - Dual Accounts Permission Application and Usage</h2>
+      <ol>
+        <li>In order to protect your right to know, we display the relevant operating system permissions that the product may apply for and use through the following list, and you can manage the relevant permissions according to your actual needs;</li>
+        <li>According to product upgrades, the types and purposes of application and use rights will change according to product functions, and we will adjust the list according to these changes in a timely manner to ensure that you are informed of the application and use of rights in a timely manner;</li>
+        <li>Please be aware that for the functional and security needs of our business and products, we will consider using third-party SDKs based on actual business scenarios, and these third parties will also apply for or use relevant operating system permissions;</li>
+        <li>In the process of using the product, if you use the H5 interface or applet developed by a third party, the plug-in or applet developed by these third parties will apply for or use the relevant operating system permissions according to the actual business function needs.</li>
+      </ol>
+      
+      <h2>List of iOS operating system app permissions</h2>
+      
+      <h3>1. Photo Library Usage Description</h3>
+      <ul>
+        <li><strong>Permission function description:</strong> read the content in the album</li>
+        <li><strong>Usage scenarios and purposes:</strong> to help you send album pictures</li>
+        <li><strong>Consequences of refusal:</strong> Unable to send album pictures</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="user-agreement" class="route-section">
+    <div class="document-page">
+      <h1>User Agreement</h1>
+      
+      <h2>January 1, 2026</h2>
+      
+      <h2>1. Introduction</h2>
+      <p>These Terms of Use and End User License Agreement (collectively, the "Agreement"), together with all documents referred to therein, constitute a legally binding agreement between you as a natural person ("you", "your" or "User") and operators ("we", "us" or "our") in relation to your access to and use of our mobile device software applications ("Apps").</p>
+      <p>All documents related to this application are expressly incorporated herein by reference.</p>
+      <p>PLEASE READ THIS AGREEMENT CAREFULLY BEFORE DOWNLOADING, INSTALLING OR USING THE APP.</p>
+      <p>Please be sure to read and understand this agreement. Downloading, installing or using this application means that you have read, understood, agreed and accepted this agreement, which takes effect from the date you download, install or use this application. By using this application, you agree to be bound by this agreement.</p>
+      <p>If you do not agree to (do not accept) this Agreement, or you do not agree to at least one of the terms of this Agreement, then you do not have permission to access, download, install or use the Application You must immediately stop downloading, installing the Application and removing it from your possession or delete (delete) the application on any mobile device under control.</p>
+      
+      <h2>2. Changes to this Agreement</h2>
+      <p>We reserve the right, in our sole discretion, to make changes or modifications to this Agreement at any time and for any reason. We will keep you informed of any changes by updating this Agreement, and you waive any right to receive specific notice of each such change. It is your responsibility to review this Agreement periodically for updates. If you continue to use the app after the date of the revised agreement, you will be, and will be deemed to understand and accept, any changes in the revised agreement.</p>
+      
+      <h2>3. General terms</h2>
+      <p>This application is a utility designed to enhance your device experience. This application is for your personal, non-commercial use only. You may only use the app for the above-mentioned purposes.</p>
+      
+      <h2>4. Privacy Policy</h2>
+      <p>Your privacy is very important to us. Therefore, we have developed a Privacy Policy so that you can understand how we process, use and store information including personal data. Access to the app and use of the service is governed by the Privacy Policy. By accessing the App and continuing to use the Services, you are deemed to have accepted the Privacy Policy and, in particular, you are deemed to acknowledge the manner in which we process your information and the appropriate legal basis for processing as described in the Privacy Policy. We reserve the right to modify the Privacy Policy from time to time. If you disagree with any part of the Privacy Policy, you must immediately stop using the App and Services. Please read our Privacy Policy carefully.</p>
+      
+      <h2>5. End User License Agreement</h2>
+      <p>By using the App, you undertake to respect our intellectual property rights (in relation to the App's source code, UI/UX design, content, copyright and trademarks, hereinafter referred to as "Intellectual Property Rights") and those owned by third parties.</p>
+      <p>As long as you continue to use the Application, we grant you a limited, non-exclusive, non-transferable, non-sublicensable, non-transferable and revocable right to access and use the Application in accordance with this Agreement ("License").</p>
+      <p>You may only use our app for your own non-commercial purposes. You must respect the copyrighted material within the app, you cannot sell the pictures available in the app.</p>
+      <p>Source code, designs and content, including information, photographs, illustrations, artwork and other graphic materials, sound, music or video ("Works") and names, logos and trademarks ("In-App Personalization") are protected by copyright and other relevant laws and/or international treaties and belong to us and/or our partners and/or contracted third parties (as the case may be).</p>
+      
+      <h2>6. Prohibited acts</h2>
+      <p>You agree not to use this application in any way:</p>
+      <ul>
+        <li>is illegal, illegal or unauthorized;</li>
+        <li>defame any other person;</li>
+        <li>Obscene or objectionable;</li>
+        <li>Infringe any copyright, database right or trademark of any other person;</li>
+        <li>Advocate, facilitate or facilitate any unlawful conduct such as (by way of example only) copyright infringement or computer misuse.</li>
+      </ul>
+      <p>You may not provide the application to any third party. In addition, you may not modify, translate into other languages, reverse engineer, decompile, disassemble or otherwise create derivative works from the Application or any documentation related to the Application.</p>
+      <p>You may not transfer, lend, lease, lease, distribute the App, or use it to provide services to third parties, or grant any rights in the App or any documentation related to the App to a third party.</p>
+      <p>Misuse of any trademark or any other content displayed on the app is prohibited.</p>
+      <p>You may not directly or indirectly copy and/or reproduce and/or distribute and/or publish and/or use any content in the App in a manner that violates our intellectual property rights.</p>
+      <p>In addition, you may not use this application or parts thereof with malicious intent.</p>
+      <p>Furthermore, we are not responsible for the way you use the app.</p>
+      <p>It is clear that for users who violate this agreement, we may take any legal action at our disposal in accordance with applicable law.</p>
+      
+      <h2>7. Availability, Security and Accuracy of the Application</h2>
+      <p>In order to use the app, you need a compatible phone or tablet with internet access.</p>
+      <p>The app can be downloaded and installed on handheld compatible mobile devices running Apple iOS operating system 14.0 or later.</p>
+      <p>We do not guarantee that this application will be compatible with all hardware and software you may use.</p>
+      <p>We do not guarantee that your access to the Application will be uninterrupted, timely or error-free.</p>
+      <p>You acknowledge that this application is provided over the Internet and mobile networks and therefore the quality and availability of this application may be affected by factors beyond our reasonable control.</p>
+      <p>App versions may be upgraded from time to time to add support for new features and services.</p>
+      <p>We may change or update the App and any content described in it without notice to you. If necessary, we may suspend access to the application, or close it indefinitely.</p>
+      <p>You also warrant that any information you submit to us is true, accurate and complete, and you agree to maintain its authenticity at all times.</p>
+      <p>You may stop using our Services at any time by selecting the relevant option in your App Store Account settings. If you decide not to use the app for any reason, you should uninstall the app.</p>
+      
+      <h2>8. Disclaimer</h2>
+      <p>You agree to use the app and its services at your own risk. THE SERVICES AND ALL MATERIALS, INFORMATION, SOFTWARE, CONTENT INTEGRATED IN THE APPS ARE PROVIDED "AS IS" AND "AS AVAILABLE". WE MAKE NO WARRANTIES, EXPRESS OR IMPLIED, OF MERCHANTABILITY, TECHNICAL COMPATIBILITY OR FITNESS FOR A PARTICULAR PURPOSE OF ANY SERVICES, PRODUCTS OR MATERIALS PROVIDED UNDER THIS AGREEMENT. We do not warrant that functionality contained in or through the Services will be available, uninterrupted or error-free, that defects will be corrected, or that the Services or the servers that make them available are free of viruses or other harmful components.</p>
+      
+      <h2>9. Third-party beneficiaries</h2>
+      <p>You acknowledge and agree that Apple and Apple's subsidiaries are third-party beneficiaries of this EULA, and that upon your acceptance of the terms and conditions of this EULA, Apple will be entitled (and will be deemed to have accepted the rights) as a third party beneficiary to enforce this EULA.</p>
+      
+      <h2>10. Termination</h2>
+      <p>We reserve the right to terminate this Agreement at any time and for any reason in our sole discretion.</p>
+      <p>Upon any termination, (a) the rights and licenses granted to you herein will terminate; (b) you must cease all use of the Application.</p>
+      
+      <h2>11. Divisibility</h2>
+      <p>If at any time any provision of this Agreement is or becomes illegal, invalid or unenforceable in any respect, such provision shall be construed as illegal, void or unenforceable or, if not possible, deleted. The other terms of this Agreement shall remain in full force and effect.</p>
+      <p>You may not assign or assign or purport to assign or assign the contract between you and us to any other person.</p>
+      
+      <h2>12. Contact Information</h2>
+      <p>We reserve the right to respond to user support requests. If you would like to submit a support request or have any questions about this Agreement or the App, please contact us via email service@szmaodian.cn</p>
+      
+      <h2>13. User Consent for Data Processing Related to Refund Requests</h2>
+      <p>In accordance with the App Store's refund policy, when a user initiates a refund request, our server will receive a notification (CONSUMPTION_REQUEST) from Apple. In such cases, we will provide Apple with data related to the user's subscription to assist Apple in making a decision regarding the refund request.</p>
+      <p>Please note that the data provided is strictly limited to subscription-related consumption information and does not include any personal or sensitive data. We are committed to complying with Apple's requirements and ensuring that all data processing activities fully adhere to privacy protection laws and regulations.</p>
+      <p>By using this app, you consent to the transmission of your subscription consumption data to Apple, as required for processing refund requests, in compliance with the App Store's refund policies.</p>
+    </div>
+  </div>
+
   <footer>
     <div class="container footer-content">
       <div class="footer-left">
@@ -467,10 +732,60 @@
       </div>
       <div class="footer-right">
         <h3>Support</h3>
-        <a href="#">Privacy Policy</a>
-        <a href="#">User Agreement</a>
+        <a href="/privacy-policy" data-route="/privacy-policy">Privacy Policy</a>
+        <a href="/user-agreement" data-route="/user-agreement">User Agreement</a>
       </div>
     </div>
   </footer>
+
+  <script>
+    function handleRoute() {
+      const path = window.location.hash.slice(1) || '/';
+      const sections = document.querySelectorAll('.route-section');
+      const navLinks = document.querySelectorAll('.nav-links a[data-route]');
+      
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+      });
+      
+      let activeSection;
+      if (path === '/') {
+        activeSection = document.getElementById('home');
+      } else if (path === '/privacy-policy') {
+        activeSection = document.getElementById('privacy-policy');
+      } else if (path === '/user-agreement') {
+        activeSection = document.getElementById('user-agreement');
+      }
+      
+      if (activeSection) {
+        activeSection.classList.add('active');
+      }
+      
+      navLinks.forEach(link => {
+        if (link.getAttribute('data-route') === path) {
+          link.classList.add('active');
+        }
+      });
+      
+      window.scrollTo(0, 0);
+    }
+    
+    handleRoute();
+    
+    window.addEventListener('hashchange', handleRoute);
+    
+    document.querySelectorAll('a[data-route]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const route = this.getAttribute('data-route');
+        if (route) {
+          window.location.hash = route;
+        }
+      });
+    });
+  </script>
 </body>
 </html>
